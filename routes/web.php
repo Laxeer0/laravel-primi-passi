@@ -15,8 +15,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('home');
-});
+})->name('/');
 Route::get('/about', function () {
     return view('about');
-});
-Route::get('/dischi', 'DischiController@index');
+})->name('about');
+Route::get('/dischi', 'DischiController@index')->name('dischi');;

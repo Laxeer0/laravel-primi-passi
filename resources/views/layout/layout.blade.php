@@ -27,11 +27,12 @@
             </div>
 
             <ul class="list-unstyled components">
-                <li>
-                    <a href="/#">Home</a>
-                    <a href="/about">About</a>
-                    <a href="/dischi">Dischi</a>
-                </li>
+                @foreach(config('routes.routes') as $key)
+                    <li class="{{ Route::currentRouteName() == $key['id'] ? 'active' : '' }}">
+                        <a href="{{ $key['id'] }}">{{ $key['view'] }}</a>
+                    </li>
+                @endforeach
+            </ul>
         </nav>
 
         <!-- Page Content  -->
